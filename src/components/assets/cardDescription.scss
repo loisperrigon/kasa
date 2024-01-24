@@ -24,7 +24,8 @@
 
     ul {
         border-radius: 0 0 5px 5px;
-        background-color: $nav-front-color;
+        background-color: $ul-background;
+        color: $nav-front-color;
 
         li {
             padding: 10px 25px;
