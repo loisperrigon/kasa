@@ -1,5 +1,4 @@
-// gallery.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import "./gallery.scss";
 
@@ -7,27 +6,50 @@ import vectorLeft from '../../assets/vectorLeft.png';
 import vectorRight from '../../assets/vectorRight.png';
 
 const Gallery = ({ pictures }) => {
-
-
+    const [firstImageLoaded, setFirstImageLoaded] = useState(false);
     const [nbrpicture, setNbrPicture] = useState(0);
+
+    // Prechargement des images pour eviter d'attendre
+    useEffect(() => {
+        const firstImage = new Image();
+        firstImage.onload = () => setFirstImageLoaded(true);
+        firstImage.src = pictures[0];
+
+        const imagePromises = pictures.slice(1).map((picture) => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve();
+                img.onerror = (error) => reject(error);
+                img.src = picture;
+            });
+        });
+
+        Promise.all(imagePromises)
+            .catch((error) => console.error("Error loading images:", error));
+
+        // Cleanup function
+        return () => {
+            setFirstImageLoaded(false);
+        };
+    }, [pictures]);
 
     const move = (direction) => {
         const totalPictures = pictures.length;
 
-        // Calculer la nouvelle position de l'image
         let newPosition = nbrpicture + direction;
 
-        // Faire boucler la position si elle dépasse les limites
         if (newPosition < 0) {
-            newPosition = totalPictures - 1; // Aller à la dernière image si on dépasse à gauche
+            newPosition = totalPictures - 1;
         } else if (newPosition >= totalPictures) {
-            newPosition = 0; // Revenir à la première image si on dépasse à droite
+            newPosition = 0;
         }
 
-        // Mettre à jour l'état avec la nouvelle position
         setNbrPicture(newPosition);
     };
 
+    if (!firstImageLoaded) {
+        return <p>Loading images...</p>;
+    }
 
     return (
         <div className='gallery'>

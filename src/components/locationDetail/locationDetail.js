@@ -46,7 +46,7 @@ const LocationDetail = () => {
 
     // Si les détails du logement n'ont pas encore été trouvés, affichez un message de chargement
     if (locationDetails === null) {
-        return <p>Chargement en cours...</p>;
+        return <></>;
     }
 
     // Si la location n'existe pas, affichez un message approprié
