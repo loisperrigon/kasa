@@ -1,0 +1,34 @@
+// Importez vos styles globaux
+@import "../../styles/styles.scss";
+
+.notfound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: auto;
+    color: $nav-front-color;
+
+    // Ajustez cette valeur selon vos préférences
+    $paddingPercentage: 60px;
+
+    h1 {
+        font-size: 100px;
+        padding: $paddingPercentage;
+        color: $nav-front-color;
+    }
+
+    h2 {
+        font-size: 36px;
+        padding: $paddingPercentage;
+        color: $nav-front-color;
+    }
+
+    a {
+        font-size: 18px;
+        padding: $paddingPercentage;
+        color: $nav-front-color;
+        text-decoration: none;
+    }
+}
