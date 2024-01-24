@@ -11,6 +11,20 @@
         border-radius: 25px;
     }
 
+    .nbrPicture {
+        position: absolute;
+        bottom: 30px;
+        /* Ajustez la position verticale selon vos besoins */
+        left: 50%;
+        /* Placez-le au centre horizontalement */
+        transform: translateX(-50%);
+        /* Ajustez la position horizontale en fonction de la largeur du texte */
+        color: white;
+        font-size: 18px;
+        /* Ajustez la taille de la police selon vos besoins */
+    }
+
+
     .vectorLeft,
     .vectorRight {
         position: absolute;

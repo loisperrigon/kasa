@@ -35,6 +35,7 @@ const Gallery = ({ pictures }) => {
                 <img className="vectorLeft" src={vectorLeft} alt="Left Arrow" onClick={() => move(-1)} />
             )}
             <img className="picture" src={pictures[nbrpicture]} alt="Gallery" />
+            <p className='nbrPicture'>{nbrpicture + 1}/{pictures.length}</p>
             {pictures.length > 1 && (
                 <img className="vectorRight" src={vectorRight} alt="Right Arrow" onClick={() => move(1)} />
             )}
