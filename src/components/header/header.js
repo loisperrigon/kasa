@@ -19,7 +19,7 @@ const Header = () => {
         >
           Acceuil
         </NavLink>
-        <NavLink to="/a_propos"
+        <NavLink to="/aPropos"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "active" : ""
           }>
