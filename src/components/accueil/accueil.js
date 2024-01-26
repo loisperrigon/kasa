@@ -1,8 +1,8 @@
 // Accueil.js
 import React from "react";
 
-import Footer from "../../components/footer/footer.js";
-import Header from "../../components/header/header.js";
+import Footer from "../module/footer/footer.js";
+import Header from "../module/header/header.js";
 
 import CardLocation from "../module/cardLocation/cardLocation";
 import CardTitle from "../module/cardTitle/cardTitle";

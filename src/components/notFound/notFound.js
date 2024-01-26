@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 import "./notFound.scss";
 
-import Footer from "../../components/footer/footer.js";
-import Header from "../../components/header/header.js";
+import Footer from "../module/footer/footer.js";
+import Header from "../module/header/header.js";
 
 const NotFound = () => {
   return (

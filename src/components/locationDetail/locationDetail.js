@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 
 import "./locationDetail.scss";
 
-import Footer from "../../components/footer/footer.js";
-import Header from "../../components/header/header.js";
+import Footer from "../module/footer/footer.js";
+import Header from "../module/header/header.js";
 
 import CardDescription from "../module/cardDescription/cardDescription";
 import Gallery from "../module/gallery/gallery";

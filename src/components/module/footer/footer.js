@@ -1,9 +1,9 @@
 // footer.js
-import React from 'react';
+import React from "react";
 
 import "./footer.scss";
 
-import logo from '../../assets/logoWhite.png';
+import logo from "../../../assets/logoWhite.png";
 
 const Footer = () => {
   return (
