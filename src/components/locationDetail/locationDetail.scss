@@ -1,77 +1,125 @@
 @import "../../styles/styles.scss";
 
 .locationDetail {
+  padding: 25px 20px 25px 20px;
 
-    padding: 25px 50px 25px 50px;
+  .titleLocationTagsRatingNamePicture {
+    display: flex;
+    justify-content: space-between; // Ajoutez cette ligne pour pousser les éléments aux extrémités
+    align-items: stretch;
 
-    .titleLocationNamePicture {
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    .titleLocationTags {
+      display: flex;
+      flex-direction: column;
+
+      .titleLocation {
+        color: $nav-front-color;
+
+        h2 {
+          font-size: 36px;
+          padding: 5px 0px;
+
+          @media screen and (max-width: 600px) {
+            font-size: 18px;
+          }
+        }
+
+        h3 {
+          font-size: 18px;
+          padding: 5px 0px;
+          @media screen and (max-width: 600px) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .tags {
         display: flex;
-        justify-content: space-between;
+        padding: 5px 0px;
+
+        div {
+          display: flex;
+          margin-right: 20px;
+          background-color: $nav-front-color;
+          font-size: 10px;
+          color: white;
+          width: 110px;
+          border-radius: 10px;
+          align-items: center;
+          justify-content: center;
+          padding: 5px;
+        }
+      }
+    }
+
+    .ratingNamePicture {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; // Aligne les éléments au bord supérieur et inférieur
+
+      @media screen and (max-width: 600px) {
+        flex-direction: row-reverse;
+        padding: 10px 0px;
+      }
+      .rating {
+        display: flex;
+
+        img {
+          padding: 5px;
+
+          @media screen and (max-width: 600px) {
+            height: 15px;
+            width: 15px;
+            padding: 2px;
+          }
+        }
+      }
+
+      .namePicture {
+        display: flex;
         align-items: center;
 
-        .titleLocation {
-            color: $nav-front-color;
+        h4 {
+          color: $nav-front-color;
+          padding: 10px;
+          font-size: 18px;
 
-            h2 {
-                font-size: 36px;
-                padding: 5px 0px;
-            }
-
-            h3 {
-                font-size: 18px;
-                padding: 5px 0px;
-            }
-
+          @media screen and (max-width: 600px) {
+            font-size: 12px;
+          }
         }
 
-        .namePicture {
-            display: flex;
-            align-items: center;
+        img {
+          width: 64px;
+          height: 64px;
+          object-fit: cover;
+          border-radius: 50%;
 
-            h4 {
-                color: $nav-front-color;
-                padding: 10px;
-                font-size: 18px;
-            }
-
-            img {
-                width: 64px;
-                height: 64px;
-                object-fit: cover;
-                border-radius: 50%;
-            }
+          @media screen and (max-width: 600px) {
+            width: 32px;
+            height: 32px;
+          }
         }
+      }
     }
+  }
 
-    .tagsRating {
+  .descriptionEquipements {
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding-top: 25px;
 
-        padding: 25px 0px;
-        display: flex;
-        justify-content: space-between;
-
-        .tags {
-
-            display: flex;
-
-            div {
-                display: flex;
-                margin-right: 20px;
-                background-color: $nav-front-color;
-                font-size: 14px;
-                color: white;
-                width: 110px;
-                border-radius: 10px;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-
+    @media screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-
-    .descriptionEquipements {
-        display: grid;
-        width: auto;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px
-    }
+  }
 }

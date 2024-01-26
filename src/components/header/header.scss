@@ -2,31 +2,45 @@
 @import "../../styles/styles.scss";
 
 header {
-    display: flex;
-    flex-shrink: 0; // Ne pas réduire la taille du header
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    padding: 25px 50px 0px 50px;
+  display: flex;
+  flex-shrink: 0; // Ne pas réduire la taille du header
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 25px 25px 0px 25px;
 
-    img {
-        width: 210.32px;
-        height: 68px;
+  img {
+    width: 210.32px;
+    height: 68px;
+
+    @media screen and (max-width: 600px) {
+      width: 145px;
+      height: 46px;
+    }
+    @media screen and (max-width: 300px) {
+      width: 100px;
+      height: 30px;
+    }
+  }
+
+  // Styles pour NavLink
+  a {
+    color: $nav-front-color;
+    margin-left: 50px;
+    text-decoration: none;
+    font-size: 24px;
+
+    &.active {
+      text-decoration: underline; // Soulignez le texte lorsque le lien est actif
     }
 
-    // Styles pour NavLink
-    a {
-        color: $nav-front-color;
-        margin: 0 10px;
-        text-decoration: none;
-        font-size: 24px;
-
-        &.active {
-            text-decoration: underline; // Soulignez le texte lorsque le lien est actif
-        }
-
-        &.pending {
-            text-decoration: none;
-        }
+    &.pending {
+      text-decoration: none;
     }
+
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
 }

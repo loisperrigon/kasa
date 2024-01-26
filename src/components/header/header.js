@@ -1,29 +1,30 @@
 // header.js
-import React from 'react';
-import { NavLink } from 'react-router-dom'; // Utilisez Link de react-router-dom
+import React from "react";
+import { NavLink } from "react-router-dom"; // Utilisez Link de react-router-dom
 
 import "./header.scss";
 
-import logo from '../../assets/logo.png';
-
+import logo from "../../assets/logo.png";
 
 const Header = () => {
   return (
     <header>
       <img src={logo} alt="Logo" />
       <div>
-        <NavLink to="/"
+        <NavLink
+          to="/"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "active" : ""
           }
         >
           Acceuil
         </NavLink>
-        <NavLink to="/aPropos"
+        <NavLink
+          to="/aPropos"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "active" : ""
-          }>
-
+          }
+        >
           A propos
         </NavLink>
       </div>

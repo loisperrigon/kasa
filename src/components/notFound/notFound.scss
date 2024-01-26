@@ -2,33 +2,49 @@
 @import "../../styles/styles.scss";
 
 .notfound {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-grow: 1;
-    overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+  color: $nav-front-color;
+
+  // Ajustez cette valeur selon vos préférences
+  $paddingPercentage: 60px;
+
+  h1,
+  h2,
+  a {
+    text-align: center; // Ajoutez cette ligne pour aligner le texte au centre
+  }
+
+  h1 {
+    font-size: 256px;
+    padding: $paddingPercentage;
     color: $nav-front-color;
 
-    // Ajustez cette valeur selon vos préférences
-    $paddingPercentage: 60px;
-
-    h1 {
-        font-size: 100px;
-        padding: $paddingPercentage;
-        color: $nav-front-color;
+    @media screen and (max-width: 600px) {
+      font-size: 96px;
     }
+  }
 
-    h2 {
-        font-size: 36px;
-        padding: $paddingPercentage;
-        color: $nav-front-color;
+  h2 {
+    font-size: 36px;
+    padding: $paddingPercentage;
+    color: $nav-front-color;
+    @media screen and (max-width: 600px) {
+      font-size: 18px;
     }
+  }
 
-    a {
-        font-size: 18px;
-        padding: $paddingPercentage;
-        color: $nav-front-color;
-        text-decoration: none;
+  a {
+    font-size: 18px;
+    padding: $paddingPercentage;
+    color: $nav-front-color;
+    text-decoration: none;
+    @media screen and (max-width: 600px) {
+      font-size: 14px;
     }
+  }
 }
