@@ -1,0 +1,42 @@
+.picture {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.nbrPicture {
+  position: absolute;
+  bottom: 30px;
+  /* Ajustez la position verticale selon vos besoins */
+  left: 50%;
+  /* Placez-le au centre horizontalement */
+  transform: translateX(-50%);
+  /* Ajustez la position horizontale en fonction de la largeur du texte */
+  color: white;
+  font-size: 18px;
+  /* Ajustez la taille de la police selon vos besoins */
+}
+
+.vectorLeft,
+.vectorRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px; // Ajustez la largeur selon vos besoins
+  height: 60px; // Ajustez la hauteur selon vos besoins
+  cursor: pointer;
+
+  @media screen and (max-width: 600px) {
+    width: 40px; // Ajustez la largeur selon vos besoins
+    height: 40px;
+  }
+}
+
+.vectorLeft {
+  left: 0;
+}
+
+.vectorRight {
+  right: 0;
+}

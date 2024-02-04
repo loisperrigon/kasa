@@ -10,36 +10,20 @@ import NotFound from "../components/notFound/notFound";
 const routerConfig = [
   {
     path: "/",
-    element: (
-      <>
-        <Accueil />
-      </>
-    ),
+    element: <Accueil />,
   },
   {
     // Route paramétrée pour le détail du logement
     path: "/location/:id",
-    element: (
-      <>
-        <LocationDetail />
-      </>
-    ),
+    element: <LocationDetail />,
   },
   {
     path: "/aPropos",
-    element: (
-      <>
-        <APropos />
-      </>
-    ),
+    element: <APropos />,
   },
   {
     path: "*",
-    element: (
-      <>
-        <NotFound />
-      </>
-    ),
+    element: <NotFound />,
   },
 ];
 

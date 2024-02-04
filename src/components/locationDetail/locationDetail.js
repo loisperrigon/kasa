@@ -8,7 +8,7 @@ import Footer from "../module/footer/footer.js";
 import Header from "../module/header/header.js";
 
 import CardDescription from "../module/cardDescription/cardDescription";
-import Gallery from "../module/gallery/gallery";
+import Gallery from "../module/gallery/gallery.js";
 
 import locationsData from "../../assets/annonces.json"; // Ajoutez l'importation de votre fichier JSON
 
@@ -41,56 +41,54 @@ const LocationDetail = () => {
   }
 
   const { id } = useParams();
-  const [locationDetails, setLocationDetails] = useState(null);
+  const [locationDetails, setLocationDetails] = useState(undefined);
 
   useEffect(() => {
     const foundLocation = locationsData.find((location) => location.id === id);
     setLocationDetails(foundLocation);
   }, [id]);
 
-  if (locationDetails === null) {
-    return <></>;
-  }
-
-  if (!locationDetails) {
-    return <p>La location avec l'ID {id} n'existe pas.</p>;
-  }
-
   // Affichez les détails de la location
   return (
     <>
       <Header />
       <section className="locationDetail">
-        <Gallery pictures={locationDetails.pictures} />
-        <div className="titleLocationTagsRatingNamePicture">
-          <div className="titleLocationTags">
-            <div className="titleLocation">
-              <h2>{locationDetails.title}</h2>
-              <h3>{locationDetails.location}</h3>
+        {locationDetails === undefined ? (
+          <p>La location avec l'ID {id} n'existe pas.</p>
+        ) : (
+          <>
+            <Gallery pictures={locationDetails.pictures} />
+            <div className="titleLocationTagsRatingNamePicture">
+              <div className="titleLocationTags">
+                <div className="titleLocation">
+                  <h2>{locationDetails.title}</h2>
+                  <h3>{locationDetails.location}</h3>
+                </div>
+                <div className="tags">{tags(locationDetails.tags)}</div>
+              </div>
+              <div className="ratingNamePicture">
+                <div className="namePicture">
+                  <h4>{locationDetails.host.name}</h4>
+                  <img
+                    src={locationDetails.host.picture}
+                    alt={locationDetails.host.name}
+                  />
+                </div>
+                <div className="rating">{ratting(locationDetails.rating)}</div>
+              </div>
             </div>
-            <div className="tags">{tags(locationDetails.tags)}</div>
-          </div>
-          <div className="ratingNamePicture">
-            <div className="namePicture">
-              <h4>{locationDetails.host.name}</h4>
-              <img
-                src={locationDetails.host.picture}
-                alt={locationDetails.host.name}
+            <div className="descriptionEquipements">
+              <CardDescription
+                title={"Description"}
+                texts={locationDetails.description}
+              />
+              <CardDescription
+                title={"Equipements"}
+                texts={locationDetails.equipments}
               />
             </div>
-            <div className="rating">{ratting(locationDetails.rating)}</div>
-          </div>
-        </div>
-        <div className="descriptionEquipements">
-          <CardDescription
-            title={"Description"}
-            texts={locationDetails.description}
-          />
-          <CardDescription
-            title={"Equipements"}
-            texts={locationDetails.equipments}
-          />
-        </div>
+          </>
+        )}
       </section>
       <Footer />
     </>
