@@ -11,15 +11,35 @@
   div {
     position: relative;
     height: 100%;
+
+    &:before {
+      content: ""; /* Nécessaire pour que le pseudo-élément soit généré */
+      position: absolute; /* Permet de positionner le pseudo-élément par rapport à son parent */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(10, 10, 10, 0) 42%,
+        rgba(4, 4, 4, 0.205) 99.99%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+
+      z-index: 2; /* Assurez-vous que le pseudo-élément est au-dessus de l'arrière-plan mais en dessous du contenu interne */
+      border-radius: 10px; /* Optionnel: si vous voulez que le dégradé ait des coins arrondis */
+    }
+
     .cardLocationImgsrc {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
-      filter: brightness(0.8);
     }
 
     p {
+      z-index: 3;
       position: absolute;
       bottom: 10px; // Ajustez selon vos besoins
       left: 10px; // Ajustez selon vos besoins

@@ -16,20 +16,22 @@ const Accueil = () => {
 
   return (
     <>
-      <Header />
-      <section className="accueil">
-        <CardTitle backgroundCard={backgroundCard} title={titleText} />
-        <div className="locations">
-          {locationsData.map((location) => (
-            <CardLocation
-              srcImg={location.cover}
-              title={location.title}
-              id={location.id}
-              key={location.id}
-            />
-          ))}
-        </div>
-      </section>
+      <div className="conteneur">
+        <Header />
+        <section className="accueil">
+          <CardTitle backgroundCard={backgroundCard} title={titleText} />
+          <div className="locations">
+            {locationsData.map((location) => (
+              <CardLocation
+                srcImg={location.cover}
+                title={location.title}
+                id={location.id}
+                key={location.id}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
       <Footer />
     </>
   );

@@ -22,16 +22,18 @@ const APropos = () => {
 
   return (
     <>
-      <Header />
-      <section className="aPropos">
-        <CardTitle backgroundCard={backgroundCard} />
-        <div className="descriptions">
-          <CardDescription title={"Fiabilité"} texts={textFiabilite} />
-          <CardDescription title={"Respect"} texts={textRespect} />
-          <CardDescription title={"Service"} texts={textService} />
-          <CardDescription title={"Sécurité"} texts={textSecurite} />
-        </div>
-      </section>
+      <div className="conteneur">
+        <Header />
+        <section className="aPropos">
+          <CardTitle backgroundCard={backgroundCard} />
+          <div className="descriptions">
+            <CardDescription title={"Fiabilité"} texts={textFiabilite} />
+            <CardDescription title={"Respect"} texts={textRespect} />
+            <CardDescription title={"Service"} texts={textService} />
+            <CardDescription title={"Sécurité"} texts={textSecurite} />
+          </div>
+        </section>
+      </div>
       <Footer />
     </>
   );

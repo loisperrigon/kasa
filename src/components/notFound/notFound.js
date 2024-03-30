@@ -10,12 +10,14 @@ import Header from "../module/header/header.js";
 const NotFound = () => {
   return (
     <>
-      <Header />
-      <section className="notfound">
-        <h1>404</h1>
-        <h2>Oups! La page que vous demandez n'existe pas.</h2>
-        <Link to="/">Retourner sur la page d’accueil</Link>
-      </section>
+      <div className="conteneur">
+        <Header />
+        <section className="notfound">
+          <h1>404</h1>
+          <h2>Oups! La page que vous demandez n'existe pas.</h2>
+          <Link to="/">Retourner sur la page d’accueil</Link>
+        </section>
+      </div>
       <Footer />
     </>
   );

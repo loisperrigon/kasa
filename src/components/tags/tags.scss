@@ -1,0 +1,19 @@
+@import "../../styles/styles.scss";
+
+.tags {
+  display: flex;
+  padding: 5px 0px;
+
+  div {
+    display: flex;
+    margin-right: 20px;
+    background-color: $nav-front-color;
+    font-size: 10px;
+    color: white;
+    width: 110px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+}
