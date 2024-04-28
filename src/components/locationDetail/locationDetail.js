@@ -46,12 +46,12 @@ const LocationDetail = () => {
   // Affichez les détails de la location
   return (
     <>
-      <div className="conteneur">
-        {locationDetails === undefined ? (
-          <Notfound />
-        ) : (
-          <>
-            {/* Render location details */}
+      {locationDetails === undefined ? (
+        <Notfound />
+      ) : (
+        <>
+          {/* Render location details */}
+          <div className="conteneur">
             <Header />
             <section className="locationDetail">
               {/* Gallery component */}
@@ -91,10 +91,10 @@ const LocationDetail = () => {
                 />
               </div>
             </section>
-          </>
-        )}
-      </div>
-      <Footer />
+          </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 };
