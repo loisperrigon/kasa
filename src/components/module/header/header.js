@@ -17,7 +17,7 @@ const Header = () => {
             isPending ? "pending" : isActive ? "active" : ""
           }
         >
-          Acceuil
+          Accueil
         </NavLink>
         <NavLink
           to="/aPropos"

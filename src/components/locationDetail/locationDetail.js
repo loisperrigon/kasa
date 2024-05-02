@@ -35,7 +35,7 @@ const LocationDetail = () => {
     return stars;
   }
 
-  const { id } = useParams();
+  const { id } = useParams(); //On recupere l'id depuis le lien
   const [locationDetails, setLocationDetails] = useState(undefined);
 
   useEffect(() => {
@@ -43,7 +43,6 @@ const LocationDetail = () => {
     setLocationDetails(foundLocation);
   }, [id]);
 
-  // Affichez les détails de la location
   return (
     <>
       {locationDetails === undefined ? (
